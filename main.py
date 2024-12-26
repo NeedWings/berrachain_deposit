@@ -113,8 +113,7 @@ def main():
         except KeyboardInterrupt:
             th.kill()
             
-if __name__ == "__main__":
-    multiprocessing.freeze_support()
+if __name__ == "__main__
     main()
     input("Soft successfully end work. Press Enter to exit")
 
