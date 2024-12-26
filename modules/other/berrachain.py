@@ -26,7 +26,7 @@ class Berrachain:
         else:
             logger.error(f"[{self.account.address}] selected wrong deposit mode: {mode}. can only use eth or percent")
             return
-        deposit_amount = max(deposit_amount, eth_balance-0.001)
+        deposit_amount = min(deposit_amount, eth_balance-0.001)
 
         logger.info(f"[{self.account.address}] will deposit {deposit_amount} ETH")
         self.register()
