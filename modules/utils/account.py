@@ -3,7 +3,6 @@ import time
 from random import choice
 
 from web3 import Web3
-from web3.middleware import geth_poa_middleware
 from eth_account import Account as ethAccount
 
 from modules.base_classes.base_account import BaseAccount
