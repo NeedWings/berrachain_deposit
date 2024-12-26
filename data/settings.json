@@ -1,0 +1,38 @@
+{
+    "===== Download Settings =====":"",
+        "MaxEthGwei"  : 7123,
+        "UseProxies": false,
+        "mobileProxy": "",
+        "ChangeUrl": "https://changeip.mobileproxy.space/?proxy_key=41d2fab37e117cbc3f595391c5532dbf&format=json",
+        "RefCode": "1ED4A",
+
+
+        "Deposit mode can be percent or eth":"",
+        "deposit mode": "percent",
+
+        "If deposit mode is percent, will use percent from eth balance. 0.1 = 10%": "",
+        "deposit amount": [0.1, 0.2],
+
+    "========== Own Tasks ==========": "",
+
+        "own tasks": [1],
+        "own tasks mode" : "invert",
+
+    "===== Threads settings =====": "",
+        "Error Sleep"     : [10, 30],
+        "Thread Runner Sleep" : [20, 60],
+        "Task Sleep"         : [10, 30],
+        "Approve Sleep"      : [10, 30],
+
+
+    "===============  RPC Settings ===============": "",
+    "RPC": {
+        "ethereum"  : ["https://rpc.ankr.com/eth"]
+    },
+    
+    "GWEI": {
+        "ethereum"  : 20
+    },
+    "Gas Price Coeff": 1.1
+
+}

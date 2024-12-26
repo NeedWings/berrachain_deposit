@@ -1,0 +1,8 @@
+termcolor
+inquirer
+web3
+curl_cffi
+loguru
+ccxt
+requests
+cryptography
