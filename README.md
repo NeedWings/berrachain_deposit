@@ -4,6 +4,7 @@
 
 ### Settings
 Настройки должны быть интуитивно понятны. Рядом с deposit mode и deposit amount лежат пояснения
+
 Thread Runner Sleep отвечает за задержку между аккаунтами
 
 
@@ -29,4 +30,4 @@ pip install -r requirements.txt
     
 Скрипт запустился.
 
-По вопросам t.me/NeedWings
+По вопросам https://t.me/NeedWings
