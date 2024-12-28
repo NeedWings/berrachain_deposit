@@ -63,7 +63,7 @@ def get_pair_for_address_from_file(filename: str, address: str):
     return None
 
 
-def req_post(url: str, **kwargs):
+def req_post(url: str, return_on_fail=False, **kwargs):
     while True:
         try:
             resp = requests.post(url, **kwargs)
@@ -74,7 +74,8 @@ def req_post(url: str, **kwargs):
                 pass
         except Exception as error:
             console_log.error(f"Requests error: {error}")
-        
+        if return_on_fail:
+            return None
         time.sleep(get_random_value(SETTINGS["Error Sleep"]))
 
 

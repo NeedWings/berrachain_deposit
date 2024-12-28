@@ -1,7 +1,6 @@
 import json
 from time import sleep
 from random import shuffle, choice, randint
-import multiprocessing
 from multiprocessing import Event
 
 from termcolor import colored
@@ -113,7 +112,7 @@ def main():
         except KeyboardInterrupt:
             th.kill()
             
-if __name__ == "__main__
+if __name__ == "__main__":
     main()
     input("Soft successfully end work. Press Enter to exit")
 

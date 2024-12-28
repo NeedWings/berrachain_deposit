@@ -1,4 +1,5 @@
 from eth_abi import encode
+from eth_account.messages import encode_defunct
 
 from modules.utils.account import Account
 from modules.utils.utils import req_post, get_random_value, get_random_value_int
@@ -13,9 +14,25 @@ class Berrachain:
         self.account = account
         self.proxies = account.proxies
 
+    def get_signature(self):
+        w3 = self.account.get_w3("ethereum")
+        resp = req_post("https://points.stakestone.io/bera/signData", return_on_fail=True, json={"address": self.account.address.lower()})
+        if resp is None:
+            return None, None
+        message = resp["message"]
+        encoded = encode_defunct(message.encode())
+        signed_message = w3.eth.account.sign_message(encoded, private_key=self.account.private_key)
+        signature = signed_message.signature.hex()
+
+        return signature, message
+
     def register(self):
-        resp  = req_post("https://points.stakestone.io/bera/gWithCode", json={"address": self.account.address.lower(), "refCode":SETTINGS["RefCode"]}, proxies=self.proxies)
-    
+        signature, message = self.get_signature()
+        if signature is None:
+            return
+        resp  = req_post("https://points.stakestone.io/bera/signCode", return_on_fail=True, json={"address": self.account.address.lower(), "code":SETTINGS["RefCode"], "message": message, "signature": signature}, proxies=self.proxies)
+        print(resp)
+
     def deposit(self):
         mode = SETTINGS["deposit mode"]
         eth_balance = self.account.get_balance(eth)[1]
